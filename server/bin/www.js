@@ -7,7 +7,8 @@
 var app = require('../app');
 var debug = require('debug')('demo:server');
 var http = require('http');
-
+var socket = require('socket.io');
+var SocketIO = require('../handlers/socketIO.js');
 /**
  * Get port from environment and store in Express.
  */
@@ -24,6 +25,9 @@ var server = http.createServer(app.callback());
 /**
  * Listen on provided port, on all network interfaces.
  */
+
+var sio = new SocketIO();
+sio.initialize(socket(server));
 
 server.listen(port);
 server.on('error', onError);

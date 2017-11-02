@@ -56,3 +56,86 @@
 [2017-11-02 18:15:11.083] [DEBUG] fileIO - e:\github\GUI-Logger\server
 [2017-11-02 18:15:11.086] [DEBUG] fileIO - e:\github\GUI-Logger\server
 [2017-11-02 18:15:32.137] [DEBUG] fileIO - e:\github\GUI-Logger\server
+[2017-11-02 23:47:56.733] [INFO] socketIO - 83j1xCVaDLmR8bfNAAAA is connection
+[2017-11-02 23:49:30.967] [INFO] socketIO - 83j1xCVaDLmR8bfNAAAA is disconnected
+[2017-11-02 23:51:04.152] [INFO] socketIO - 2RGChETbGMp39x5cAAAB is connection
+[2017-11-02 23:51:10.783] [INFO] socketIO - 2RGChETbGMp39x5cAAAB is disconnected
+[2017-11-02 23:51:12.599] [INFO] socketIO - AyxKvXl6ShzADAmlAAAC is connection
+[2017-11-02 23:51:46.266] [INFO] socketIO - AyxKvXl6ShzADAmlAAAC is disconnected
+[2017-11-02 23:51:48.242] [INFO] socketIO - BX2jVjalOaDFSRvpAAAD is connection
+[2017-11-02 23:51:49.868] [INFO] socketIO - TUwlcSRpdaJreh0IAAAA is connection
+[2017-11-02 23:52:27.008] [INFO] socketIO - kADHrZsAUlQbL16MAAAA is connection
+[2017-11-02 23:52:31.603] [INFO] socketIO - kADHrZsAUlQbL16MAAAA is disconnected
+[2017-11-02 23:52:33.412] [INFO] socketIO - bJwxg3akiIqX8Jn1AAAB is connection
+[2017-11-02 23:52:33.641] [DEBUG] fileIO - ../log/test.log
+[2017-11-02 23:52:35.656] [INFO] socketIO - k_ZRYzdng-iQg24MAAAA is connection
+[2017-11-02 23:53:09.017] [INFO] socketIO - bKugjuR1zeEVjrugAAAA is connection
+[2017-11-02 23:53:11.527] [INFO] socketIO - bKugjuR1zeEVjrugAAAA is disconnected
+[2017-11-02 23:53:13.342] [INFO] socketIO - uVR5NKB-WLzWJOacAAAB is connection
+[2017-11-02 23:53:13.571] [DEBUG] fileIO - /log/test.log
+[2017-11-02 23:53:15.505] [INFO] socketIO - W3TqX0NfBLchvPEHAAAA is connection
+[2017-11-02 23:55:09.568] [INFO] socketIO - stBowr2eTnDnBGUIAAAA is connection
+[2017-11-02 23:55:12.531] [INFO] socketIO - stBowr2eTnDnBGUIAAAA is disconnected
+[2017-11-02 23:55:14.338] [INFO] socketIO - TOhWuYfQvTMRutC-AAAB is connection
+[2017-11-02 23:55:15.949] [INFO] socketIO - w-9jZ3n79MqRMVQPAAAA is connection
+[2017-11-02 23:55:32.222] [INFO] socketIO - IvXP9XpFgoNel5ZTAAAA is connection
+[2017-11-02 23:55:33.825] [INFO] socketIO - IvXP9XpFgoNel5ZTAAAA is disconnected
+[2017-11-02 23:55:35.687] [INFO] socketIO - G5XuvRNVTVT2iMbuAAAB is connection
+[2017-11-02 23:55:35.906] [DEBUG] fileIO - E:\my_work\github\GUI-Logger\server
+[2017-11-02 23:55:35.910] [DEBUG] fileIO - E:\my_work\github\GUI-Logger\server\log\test.log
+[2017-11-02 23:55:59.058] [DEBUG] socketIO - 
+[2017-11-02 23:56:04.717] [DEBUG] socketIO - 123123
+[2017-11-02 23:56:04.717] [DEBUG] socketIO - 111
+[2017-11-02 23:56:04.717] [DEBUG] socketIO - 123
+[2017-11-02 23:56:04.717] [DEBUG] socketIO - 111
+[2017-11-02 23:56:04.717] [DEBUG] socketIO - 3
+[2017-11-02 23:56:04.723] [DEBUG] socketIO - 4
+[2017-11-02 23:56:04.723] [DEBUG] socketIO - 5
+[2017-11-02 23:56:04.723] [DEBUG] socketIO - 5
+[2017-11-02 23:56:04.723] [DEBUG] socketIO - 123
+[2017-11-02 23:56:32.389] [INFO] socketIO - G5XuvRNVTVT2iMbuAAAB is disconnected
+[2017-11-02 23:56:34.302] [INFO] socketIO - hmpYA4scj4Q5gmPIAAAC is connection
+[2017-11-02 23:56:34.550] [DEBUG] fileIO - E:\my_work\github\GUI-Logger\server
+[2017-11-02 23:56:34.552] [DEBUG] fileIO - E:\my_work\github\GUI-Logger\server\log\test.log
+[2017-11-02 23:56:40.744] [INFO] socketIO - hmpYA4scj4Q5gmPIAAAC is disconnected
+[2017-11-02 23:56:42.560] [INFO] socketIO - qf73bDzqy6cIbvpGAAAD is connection
+[2017-11-02 23:56:42.781] [DEBUG] fileIO - E:\my_work\github\GUI-Logger\server
+[2017-11-02 23:56:42.788] [DEBUG] fileIO - E:\my_work\github\GUI-Logger\server\log\test.log
+[2017-11-02 23:56:50.009] [DEBUG] socketIO - 
+[2017-11-02 23:56:50.009] [DEBUG] socketIO - 123
+[2017-11-02 23:56:50.019] [DEBUG] socketIO - 123123
+[2017-11-02 23:56:50.019] [DEBUG] socketIO - 111
+[2017-11-02 23:56:50.021] [DEBUG] socketIO - 123
+[2017-11-02 23:56:50.021] [DEBUG] socketIO - 111
+[2017-11-02 23:56:50.022] [DEBUG] socketIO - 3
+[2017-11-02 23:56:50.022] [DEBUG] socketIO - 4
+[2017-11-02 23:56:50.031] [DEBUG] socketIO - 5
+[2017-11-02 23:56:50.031] [DEBUG] socketIO - 5
+[2017-11-02 23:56:50.033] [DEBUG] socketIO - 123
+[2017-11-02 23:56:50.034] [DEBUG] socketIO - 123
+[2017-11-02 23:56:50.034] [DEBUG] socketIO - 123
+[2017-11-02 23:56:50.035] [DEBUG] socketIO - 123
+[2017-11-02 23:56:50.036] [DEBUG] socketIO - 111
+[2017-11-02 23:56:50.036] [DEBUG] socketIO - 123
+[2017-11-02 23:56:50.037] [DEBUG] socketIO - 111
+[2017-11-02 23:56:50.037] [DEBUG] socketIO - 3
+[2017-11-02 23:56:50.038] [DEBUG] socketIO - 4
+[2017-11-02 23:56:50.038] [DEBUG] socketIO - 5
+[2017-11-02 23:56:50.039] [DEBUG] socketIO - 5
+[2017-11-02 23:56:50.039] [DEBUG] socketIO - 123
+[2017-11-02 23:56:50.040] [DEBUG] socketIO - 123
+[2017-11-02 23:56:50.040] [DEBUG] socketIO - 123
+[2017-11-02 23:56:52.126] [DEBUG] socketIO - 123
+[2017-11-02 23:56:52.126] [DEBUG] socketIO - 123
+[2017-11-02 23:56:52.126] [DEBUG] socketIO - 123123
+[2017-11-02 23:56:52.126] [DEBUG] socketIO - 111
+[2017-11-02 23:56:52.126] [DEBUG] socketIO - 123
+[2017-11-02 23:56:52.136] [DEBUG] socketIO - 111
+[2017-11-02 23:56:52.136] [DEBUG] socketIO - 3
+[2017-11-02 23:56:52.136] [DEBUG] socketIO - 4
+[2017-11-02 23:56:52.137] [DEBUG] socketIO - 5
+[2017-11-02 23:56:52.137] [DEBUG] socketIO - 5
+[2017-11-02 23:56:52.138] [DEBUG] socketIO - 123
+[2017-11-02 23:56:52.138] [DEBUG] socketIO - 123
+[2017-11-02 23:56:52.138] [DEBUG] socketIO - 123
+[2017-11-02 23:56:52.138] [DEBUG] socketIO - 123
