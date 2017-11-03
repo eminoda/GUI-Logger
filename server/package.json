@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "supervisor -i ./node_modules node bin/www.js",
+    "start": "supervisor -i ./node_modules,./log node bin/www.js",
     "dev": "nodemon bin/www.js",
     "prd": "pm2 start bin/www.js",
     "test": "node ./bin/test.js"
