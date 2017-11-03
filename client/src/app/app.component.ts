@@ -1,3 +1,4 @@
+import { SocketIoService } from './socket-io/socket-io.service';
 import { AppService } from './app.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
@@ -7,22 +8,28 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit, OnDestroy {
-  title = 'app';
-  inputValue: string[] = [''];
-  socketListen;
+
+  public readlineSIO;
+  public content: string[] = [];
 
   constructor(
-    private appService: AppService
+    private socketIoService: SocketIoService
   ) { }
 
   ngOnInit() {
-    this.socketListen = this.appService.listenReadLine().subscribe((line) => {
+    this.socketIoService.listenSocket('c-readline').subscribe((line) => {
       console.log(line);
-      this.inputValue.push(line);
+      if (this.content.length > 18) {
+        this.content.shift();
+      }
+      this.content.push(line);
     });
-    this.appService.emitReadLine(123);
+  }
+
+  public readline(status: boolean): void {
+    this.socketIoService.emitSocket('s-readline', status);
   }
   ngOnDestroy() {
-    this.socketListen.unsubscribe();
+    // this.socketListen.unsubscribe();
   }
 }

@@ -7,18 +7,24 @@ function SocketIO() { }
 
 SocketIO.prototype.initialize = (io) => {
     io.on('connection', function (socket) {
-        logger.info(`${socket.id} is connection`);
+        logger.debug(`${socket.id} is connection`);
 
         socket.on('disconnect', function () {
-            logger.info(`${socket.id} is disconnected`);
+            logger.debug(`${socket.id} is disconnected`);
         });
 
         // 读取文件
-        socket.on('s-readfile', function (user) {
+        socket.on('s-readline', function (readStatus) {
+            console.log(readStatus);
+            logger.debug('s-readline is active');
             const tail = fio.tail(path.resolve(new FileIO().getRootDirtory(), 'log/test.log'));
+            // 停止订阅
+            if (!readStatus) {
+                tail.unwatch();
+            }
             tail.on('line', (line) => {
                 logger.debug(line);
-                socket.emit('c-readfile', line);
+                socket.emit('c-readline', line);
             }).on('error', (error) => {
                 logger.error(error);
                 tail.unwatch();

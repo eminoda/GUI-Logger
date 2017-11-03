@@ -22,6 +22,7 @@ FileIO.prototype.tail = (filePath) => {
     return new Tail(filePath);
 };
 
+// 获取项目根目录
 FileIO.prototype.getRootDirtory = () => {
     const rootDir = path.join(__dirname, '..');
     logger.debug(rootDir);
@@ -35,4 +36,10 @@ FileIO.prototype.isExist = (filePath) => {
     return fs.existsSync(wholeFilePath);
 };
 
+FileIO.prototype.rollWrite = () => {
+    let i = 0;
+    setInterval(() => {
+        fs.appendFileSync(path.join(__dirname, '..', '/log/test.log'), '\r\n' + Date.now() + ` : ${i++}`);
+    }, 1000);
+}
 module.exports = FileIO;

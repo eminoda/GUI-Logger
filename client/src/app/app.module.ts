@@ -1,3 +1,4 @@
+import { SocketIoService } from './socket-io/socket-io.service';
 import { AppService } from './app.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -18,7 +19,7 @@ import { AppComponent } from './app.component';
     BrowserAnimationsModule,
     NgZorroAntdModule.forRoot()
   ],
-  providers: [AppService],
+  providers: [AppService, SocketIoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
