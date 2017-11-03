@@ -21,7 +21,8 @@ export class SocketIoService {
     });
   }
 
-  emitSocket(socketName: string, socketStatus: boolean) {
-    this.sio.emit(socketName, socketStatus);
+  emitSocket(socketName: string) {
+    this.sio.emit(socketName);
   }
+
 }

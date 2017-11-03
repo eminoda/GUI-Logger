@@ -26,8 +26,12 @@ export class AppComponent implements OnInit, OnDestroy {
     });
   }
 
-  public readline(status: boolean): void {
-    this.socketIoService.emitSocket('s-readline', status);
+  public readline(): void {
+    this.socketIoService.emitSocket('s-readline');
+  }
+
+  public stopRead(): void {
+    this.socketIoService.emitSocket('s-stopRead');
   }
   ngOnDestroy() {
     // this.socketListen.unsubscribe();
