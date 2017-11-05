@@ -1,17 +1,13 @@
-
-.readline-wrap{
-    padding: 5px;
-    ul{
-        margin: auto auto;
-        border: 1px solid #999;
-        background-color: #333;
-        padding:1%;
-        width: 90%;
-        min-height: 500px;
-        li{
-            color: #fff;
-            font-size: 20px;
-            line-height: 24px;
-        }
-    }
+:host ::ng-deep .logo {
+  width: 120px;
+  height: 31px;
+  background: #333;
+  border-radius: 6px;
+  margin: 16px 28px 16px 0;
+  float: left;
+}
+img{
+  width: 100%;
+  position: relative;
+  top: 0;
 }

@@ -7,6 +7,8 @@ import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { AppComponent } from './app.component';
+import { RouterModule } from '@angular/router';
+import { appRoutes } from './app.router';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,7 @@ import { AppComponent } from './app.component';
     FormsModule,
     HttpModule,
     BrowserAnimationsModule,
+    RouterModule.forRoot(appRoutes),
     NgZorroAntdModule.forRoot()
   ],
   providers: [AppService, SocketIoService],

@@ -1,0 +1,29 @@
+.readline-wrap{
+    padding: 5px;
+    ul{
+        margin: auto auto;
+        border: 1px solid #999;
+        background-color: #333;
+        padding:1%;
+        min-height: 500px;
+        li{
+            color: #fff;
+            font-size: 20px;
+            line-height: 24px;
+        }
+    }
+    .operation{
+        position: relative;
+        top: -50px;
+        float: left;
+        width: 100%;    
+        background: rgba(153,153,153,0.2);
+        padding: 10px 20px;
+        button{
+            margin-right: 1%;
+        }
+    }
+    .operation-hidden{
+        visibility: hidden;
+    }
+}

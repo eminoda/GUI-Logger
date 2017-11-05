@@ -1,39 +1,48 @@
-import { SocketIoService } from './socket-io/socket-io.service';
-import { AppService } from './app.service';
-import { Component, OnInit, OnDestroy } from '@angular/core';
+
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit, OnDestroy {
+export class AppComponent implements OnInit {
 
-  public readlineSIO;
-  public content: string[] = [];
+  public subNavGroups = [{
+    groupName: '日志',
+    groupType: 1,
+    subNavList: [{
+      subNavName: '实时监控',
+      subNavUrl: '/logger/detail'
+    }, {
+      subNavName: '异常告警',
+      subNavUrl: '/logger/error'
+    }, {
+      subNavName: '日志输出',
+      subNavUrl: '/logger/tail'
+    }]
+  }, {
+    groupName: '设置',
+    groupType: 2,
+    subNavList: [{
+      subNavName: '系统设置',
+      subNavUrl: '/setting/system'
+    }, {
+      subNavName: '个人设置',
+      subNavUrl: '/setting/user'
+    }]
+  }]
 
   constructor(
-    private socketIoService: SocketIoService
+    private activeRouter: ActivatedRoute
   ) { }
 
   ngOnInit() {
-    this.socketIoService.listenSocket('c-readline').subscribe((line) => {
-      console.log(line);
-      if (this.content.length > 18) {
-        this.content.shift();
-      }
-      this.content.push(line);
-    });
+    console.log(this.activeRouter.url);
   }
 
-  public readline(): void {
-    this.socketIoService.emitSocket('s-readline');
-  }
-
-  public stopRead(): void {
-    this.socketIoService.emitSocket('s-stopRead');
-  }
-  ngOnDestroy() {
-    // this.socketListen.unsubscribe();
+  chooseSubNav() {
+    console.log(123)
   }
 }

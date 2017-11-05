@@ -1,0 +1,9 @@
+<div class="readline-wrap">
+  <ul>
+    <li *ngFor="let line of content">{{line}}</li>
+  </ul>
+  <div class="operation">
+    <button nz-button [nzType]="'primary'" (click)="readline()">读取</button>
+    <button nz-button [nzType]="'primary'" (click)="stopRead()">暂停</button>
+  </div>
+</div>
