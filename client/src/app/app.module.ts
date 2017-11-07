@@ -9,10 +9,12 @@ import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './app.router';
+import { EchartDirective } from './appGlobal/directive/echart.directive';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    EchartDirective
   ],
   imports: [
     BrowserModule,

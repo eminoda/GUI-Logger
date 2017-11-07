@@ -1,6 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,40 +9,51 @@ import { ActivatedRoute } from "@angular/router";
 })
 export class AppComponent implements OnInit {
 
+  public sideType: number;
+
   public subNavGroups = [{
-    groupName: '日志',
-    groupType: 1,
+    name: '日志',
+    type: 1,
+    url: '/logger/detail',
+    icon: 'file',
     subNavList: [{
-      subNavName: '实时监控',
-      subNavUrl: '/logger/detail'
+      name: '实时监控',
+      url: '/logger/detail',
+      icon: 'area-chart'
     }, {
-      subNavName: '异常告警',
-      subNavUrl: '/logger/error'
+      name: '异常告警',
+      url: '/logger/error',
+      icon: 'frown'
     }, {
-      subNavName: '日志输出',
-      subNavUrl: '/logger/tail'
+      name: '日志输出',
+      url: '/logger/tail',
+      icon: 'code-o'
     }]
   }, {
-    groupName: '设置',
-    groupType: 2,
+    name: '设置',
+    type: 2,
+    url: '/setting',
+    icon: 'setting',
     subNavList: [{
-      subNavName: '系统设置',
-      subNavUrl: '/setting/system'
+      name: '系统设置',
+      url: '/setting/system',
+      icon: 'android-o'
     }, {
-      subNavName: '个人设置',
-      subNavUrl: '/setting/user'
+      name: '个人设置',
+      url: '/setting/user',
+      icon: 'user'
     }]
-  }]
+  }];
 
   constructor(
     private activeRouter: ActivatedRoute
   ) { }
 
   ngOnInit() {
-    console.log(this.activeRouter.url);
   }
 
-  chooseSubNav() {
-    console.log(123)
+  chooseSubNav(sideType) {
+    console.log(sideType);
+    this.sideType = sideType;
   }
 }

@@ -1,25 +1,24 @@
-<nz-layout class="layout">
+<nz-layout class="layout" style="height: 100%;">
   <nz-header>
     <div class="logo">
       <img src="/assets/logo.png" alt="">
     </div>
     <ul nz-menu [nzTheme]="'dark'" [nzMode]="'horizontal'" style="line-height: 64px;">
-      <li nz-menu-item routerLinkActive="ant-menu-item-selected" (click)="chooseSubNav(1)">
-        <a [routerLink]="['/logger/detail']">日志</a>
-      </li>
-      <li nz-menu-item routerLinkActive="ant-menu-item-selected">
-        <a [routerLink]="['/setting']">设置</a>
+      <li nz-menu-item routerLinkActive="ant-menu-item-selected" (click)="chooseSubNav(subNavGroup.type)" *ngFor="let subNavGroup of subNavGroups">
+        <a [routerLink]="[subNavGroup.url]">{{subNavGroup.name}}</a>
       </li>
     </ul>
   </nz-header>
   <nz-layout>
-    <nz-sider [nzWidth]="200" style="background:#fff">
-      <ul nz-menu [nzMode]="'inline'" style="height:100%">
-        <li nz-submenu *ngFor="let subNavGroup of subNavGroups;let i = index" [nzOpen]="i===subNavGroup.groupType">
-          <span title><i class="anticon anticon-user"></i>{{subNavGroup.groupName}}</span>
+    <nz-sider [nzWidth]="200">
+      <ul nz-menu [nzTheme]="'dark'" [nzMode]="'inline'" style="height:100%">
+        <li nz-submenu *ngFor="let subNavGroup of subNavGroups;let i = index" [nzOpen]="i+1===sideType">
+          <span title>
+            <i class="anticon anticon-{{subNavGroup.icon}}"></i>{{subNavGroup.name}}</span>
           <ul>
             <li nz-menu-item routerLinkActive="ant-menu-item-selected" *ngFor="let subNav of subNavGroup.subNavList">
-              <a [routerLink]="[subNav.subNavUrl]">{{subNav.subNavName}}</a>
+              <a [routerLink]="[subNav.url]">
+                <i class="anticon anticon-{{subNav.icon}}"></i>{{subNav.name}}</a>
             </li>
           </ul>
         </li>
@@ -31,10 +30,9 @@
         <nz-breadcrumb-item>List</nz-breadcrumb-item>
         <nz-breadcrumb-item>App</nz-breadcrumb-item>
       </nz-breadcrumb>
-      <nz-content style="background:#fff; padding: 24px; min-height: 280px;">
+      <nz-content style="background:#fff; min-height: 280px;">
         <router-outlet></router-outlet>
       </nz-content>
     </nz-layout>
   </nz-layout>
 </nz-layout>
-<!-- <router-outlet></router-outlet> -->
