@@ -1,3 +1,4 @@
+import { SharedModule } from './appGlobal/shared.module';
 import { SocketIoService } from './socket-io/socket-io.service';
 import { AppService } from './app.service';
 import { BrowserModule } from '@angular/platform-browser';
@@ -9,17 +10,14 @@ import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './app.router';
-import { EchartDirective } from './appGlobal/directive/echart.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EchartDirective
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    HttpModule,
+    SharedModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes),
     NgZorroAntdModule.forRoot()

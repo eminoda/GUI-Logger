@@ -52,8 +52,8 @@ export class AppComponent implements OnInit {
   ngOnInit() {
   }
 
+  // 选择菜单
   chooseSubNav(sideType) {
-    console.log(sideType);
     this.sideType = sideType;
   }
 }

@@ -1,3 +1,5 @@
+import { SharedModule } from './../appGlobal/shared.module';
+import { EchartDirective } from './../appGlobal/directive/echart.directive';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { loggerRoutes } from './logger.router';
 import { RouterModule } from '@angular/router';
@@ -16,7 +18,7 @@ import { TailLoggerComponent } from './tail-logger/tail-logger.component';
     TailLoggerComponent
   ],
   imports: [
-    CommonModule,
+    SharedModule,
     NgZorroAntdModule,
     RouterModule.forChild(loggerRoutes)
   ]
