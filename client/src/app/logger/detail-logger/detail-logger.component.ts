@@ -1,66 +1,64 @@
-import { Component, OnInit } from '@angular/core';
+import { SocketIoService } from './../../socket-io/socket-io.service';
+import { Component, OnInit, OnChanges, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-detail-logger',
   templateUrl: './detail-logger.component.html',
   styleUrls: ['./detail-logger.component.scss']
 })
-export class DetailLoggerComponent implements OnInit {
+export class DetailLoggerComponent implements OnInit, OnChanges {
 
-  private data = [];
-  public echartOption1 = {
-    title: {
-      text: '服务器'
-    },
-    tooltip: {
-      trigger: 'axis'
-    },
-    grid: {
-      left: '3%',
-      right: '4%',
-      bottom: '3%',
-      containLabel: true
-    },
-    xAxis: {
-      type: 'time'
-    },
-    yAxis: {
-      type: 'value'
-    },
-    series: [
-      {
-        name: '邮件营销',
-        type: 'line',
-        stack: '总量',
-        data: [120, 132, 101, 134, 90, 230, 210]
-      },
-      {
-        name: '联盟广告',
-        type: 'line',
-        stack: '总量',
-        data: [220, 182, 191, 234, 290, 330, 310]
-      },
-      {
-        name: '视频广告',
-        type: 'line',
-        stack: '总量',
-        data: [150, 232, 201, 154, 190, 330, 410]
-      }
-    ]
-  };
-
-
-
-  constructor() { }
+  public cpus = [];
+  public echartOption;
+  private socketListen;
+  constructor(
+    private socketIoService: SocketIoService
+  ) { }
 
   ngOnInit() {
-    console.log(this.echartOption1);
-    setInterval(function () {
-      for (let i = 0; i < 5; i++) {
-        this.echartOption1.series[0].data.shift();
-        this.echartOption1.series[0].data.push(Math.random() * 21 - 10);
-      }
-      this.echartOption1.series[0].data = 1;
-    }, 1000);
+    this.echartOption = {
+      title: {
+        text: '服务器'
+      },
+      tooltip: {
+        trigger: 'axis'
+      },
+      grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+      },
+      xAxis: {
+        type: 'time'
+      },
+      yAxis: {
+        type: 'value'
+      },
+      series: [
+        {
+          name: 'cpu',
+          type: 'line',
+          hoverAnimation: true,
+          data: []
+        }
+      ]
+    };
+    this.socketListen = this.socketIoService.listenSocket('c-cpuStatus').subscribe((cpuInfo) => {
+      console.log(this.cpus);
+      this.cpus.push([cpuInfo.date, cpuInfo.cpu]);
+      this.echartOption = {
+        series: [{
+          data: this.cpus
+        }]
+      };
+    });
+    this.socketIoService.emitSocket('s-cpuStatus');
+  }
+
+  public ngOnChanges(): void {
+    // if (this.cpus) {
+    //   this.echartOption.series[0].data = this.cpus;
+    // }
   }
 }

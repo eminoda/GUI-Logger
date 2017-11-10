@@ -2,6 +2,8 @@ const logger = require('./logger.js')('socketIO');
 const FileIO = require('./fileIO');
 const path = require('path');
 const fio = new FileIO();
+const util = require('./util');
+const os = require('os');
 let socketIds = [];
 
 function SocketIO() { }
@@ -34,8 +36,20 @@ SocketIO.prototype.initialize = (io) => {
                     logger.error(error);
                 })
             }
-
         });
+        // 服务器性能状态
+        socket.on('s-cpuStatus', function () {
+            // 上次cpu监听状态
+            let oldCpu = util.getCpuAvg();
+            setInterval(() => {
+                let cpuPercent = util.getCpuDiff(oldCpu, util.getCpuAvg());
+                oldCpu = util.getCpuAvg();
+                socket.emit('c-cpuStatus', {
+                    cpu: cpuPercent,
+                    date: new Date()
+                });
+            }, 3000);
+        })
     });
 }
 

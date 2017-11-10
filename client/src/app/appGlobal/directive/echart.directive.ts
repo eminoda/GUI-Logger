@@ -2,7 +2,7 @@ import { Directive, ElementRef, Input, OnChanges } from '@angular/core';
 import * as echarts from 'echarts';
 
 @Directive({
-  selector: '[echart]'
+  selector: '[echart]',
 })
 
 export class EchartDirective implements OnChanges {
@@ -14,9 +14,8 @@ export class EchartDirective implements OnChanges {
   ) { }
 
   public ngOnChanges(): void {
+    console.log(1);
     if (this.echartOption) {
-      this.el.nativeElement.style.width = '800px';
-      this.el.nativeElement.style.height = '500px';
       echarts.init(this.el.nativeElement).setOption(this.echartOption);
     }
   }
