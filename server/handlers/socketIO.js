@@ -48,7 +48,16 @@ SocketIO.prototype.initialize = (io) => {
                     cpu: cpuPercent,
                     date: new Date()
                 });
-            }, 3000);
+            }, 1000);
+        })
+
+        socket.on('s-heapStatus', function () {
+            setInterval(() => {
+                socket.emit('c-heapStatus', {
+                    heap: util.getHeapUsage(),
+                    date: new Date()
+                });
+            }, 1000);
         })
     });
 }

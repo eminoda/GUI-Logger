@@ -27,6 +27,18 @@ Util.prototype.getCpuAvg = () => {
 }
 
 Util.prototype.getHeapUsage = () => {
-
+    const memoryUsage = process.memoryUsage();
+    const size = 1024 * 1024;
+    const rss = memoryUsage.rss / size;
+    const heapTotal = memoryUsage.heapTotal / size;
+    const heapUsed = memoryUsage.heapUsed / size;
+    const external = memoryUsage.external / size;
+    console.log(`rss:${rss},heapTotal:${heapTotal},heapUsed:${heapUsed},external:${external}`);
+    return {
+        rss: rss,
+        heapTotal: heapTotal,
+        heapUsed: heapUsed,
+        external: external
+    }
 }
 module.exports = new Util();

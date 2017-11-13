@@ -14,8 +14,7 @@ export class EchartDirective implements OnChanges {
   ) { }
 
   public ngOnChanges(): void {
-    console.log(1);
-    if (this.echartOption) {
+    if (this.echartOption && this.el.nativeElement) {
       echarts.init(this.el.nativeElement).setOption(this.echartOption);
     }
   }

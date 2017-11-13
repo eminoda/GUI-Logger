@@ -27,19 +27,19 @@ const os = require('os');
 //     }
 // }, 1000);
 
-// setInterval(() => {
-// const cpuUsage = process.cpuUsage();
-//     const memoryUsage = process.memoryUsage();
-// let cpuUsePercent = cpuUsage.user / cpuUsage.system * 100 + '%';
-//     console.log(cpuUsage);
-// console.log(cpuUsage);
-//     const size = 1024 * 1024;
-//     const rss = memoryUsage.rss / size;
-//     const heapTotal = memoryUsage.heapTotal / size;
-//     const heapUsed = memoryUsage.heapUsed / size;
-//     const external = memoryUsage.external / size;
-//     console.log(`rss:${rss},heapTotal:${heapTotal},heapUsed:${heapUsed},external:${external}`);
-// }, 3000);
+setInterval(() => {
+    // const cpuUsage = process.cpuUsage();
+    const memoryUsage = process.memoryUsage();
+    // let cpuUsePercent = cpuUsage.user / cpuUsage.system * 100 + '%';
+    // console.log(cpuUsage);
+    // console.log(cpuUsage);
+    const size = 1024 * 1024;
+    const rss = memoryUsage.rss / size;
+    const heapTotal = memoryUsage.heapTotal / size;
+    const heapUsed = memoryUsage.heapUsed / size;
+    const external = memoryUsage.external / size;
+    console.log(`rss:${rss},heapTotal:${heapTotal},heapUsed:${heapUsed},external:${external}`);
+}, 3000);
 
 // setInterval(() => {
 //     const size = 1024 * 1024;
@@ -84,8 +84,8 @@ function carryOver(direction, value, size) {
 
 const util = require('../handlers/util.js');
 
-let oldCpu = util.getCpuAvg();
-setInterval(() => {
-    console.log(util.getCpuDiff(oldCpu, util.getCpuAvg()));
-    oldCpu = util.getCpuAvg();
-}, 2000);
+// let oldCpu = util.getCpuAvg();
+// setInterval(() => {
+//     console.log(util.getCpuDiff(oldCpu, util.getCpuAvg()));
+//     oldCpu = util.getCpuAvg();
+// }, 2000);
