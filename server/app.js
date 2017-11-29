@@ -6,8 +6,11 @@ const onerror = require('koa-onerror')
 const bodyparser = require('koa-bodyparser')
 const logger = require('koa-logger')
 
+// 路由模块
 const index = require('./routes/index')
-const users = require('./routes/users')
+const users = require('./routes/users');
+const loggerRouter = require('./routes/logger.js');
+const notFoundRouter = require('./routes/404.js');
 
 // 测试
 const FileIO = require('./handlers/fileIO.js');
@@ -39,6 +42,8 @@ app.use(async (ctx, next) => {
 // routes
 app.use(index.routes(), index.allowedMethods())
 app.use(users.routes(), users.allowedMethods())
+app.use(loggerRouter.routes(), loggerRouter.allowedMethods());
+app.use(notFoundRouter.routes(), notFoundRouter.allowedMethods());
 
 // error-handling
 app.on('error', (err, ctx) => {

@@ -54,8 +54,7 @@ export class DetailLoggerComponent implements OnInit, OnDestroy {
           name: 'cpu',
           type: 'line',
           hoverAnimation: true,
-          data: [
-          ]
+          data: []
         }
       ]
     };
@@ -120,7 +119,7 @@ export class DetailLoggerComponent implements OnInit, OnDestroy {
       .debounceTime(800)
       .subscribe((cpuInfo) => {
         // console.log(cpuInfo);
-        if (this.cpus.length > 10) {
+        if (this.cpus.length > 30) {
           this.cpus.shift();
         }
         this.cpus.push([cpuInfo.date, cpuInfo.cpu]);

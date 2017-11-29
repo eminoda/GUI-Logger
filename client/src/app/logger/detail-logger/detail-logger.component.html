@@ -1,4 +1,11 @@
-<div class="echart-wrap">
-    <div echart [echartOption]="echartCpuOption" style="width: 480px;height:230px;"></div>
-    <div echart [echartOption]="echartHeapOption" style="width: 500px;height:230px;"></div>
-</div>
+<!-- <div class="echart-wrap"> -->
+<ul class="echart-wrap">
+    <li class="echart-frame">
+        <div echart [echartOption]="echartCpuOption" class="echart-frame" [class]="cpus.length<10?'hide':''"></div>
+        <img src="/assets/Spinner.gif" alt="" class="loading" *ngIf="cpus.length<10">
+    </li>
+    <li class="echart-frame">
+        <div echart [echartOption]="echartHeapOption" class="echart-frame" [class]="this.heaps.rss.length<10?'hide':''"></div>
+        <img src="/assets/Spinner.gif" alt="" class="loading" *ngIf="this.heaps.rss.length<10">
+    </li>
+</ul>
